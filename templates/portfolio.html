@@ -1,0 +1,52 @@
+{% extends 'blog_base.html' %}
+{% load static %}
+
+{% block title %}
+Portfolio
+{% endblock title %}
+
+{% block portfolioNav %}active
+            {% endblock portfolioNav %}
+
+{% block message %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+	{{message}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock message %}
+
+
+{% block side %}
+{% endblock side %}
+
+
+{% block content %}
+
+<div class="col-sm-10 mt-3 ">
+	<div class="text-center">
+		<h3 class="text-white">
+			Project_B || LXDPP v1.0
+		</h3>
+		<h2>
+			My Self...
+		</h2>
+	</div>
+
+<h4>Main Block</h4>
+</div>	
+
+<!-- side bar is from here -->
+<div class="col-sm-2 mt-3">
+	<h4>Side Block</h4>
+</div>
+<!-- /side bar -->
+
+
+{% endblock content %}

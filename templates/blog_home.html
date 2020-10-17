@@ -1,0 +1,66 @@
+{% extends 'blog_base.html' %}
+{% load static %}
+
+{% block title %}
+Blog
+{% endblock title %}
+
+{% block blogNav %}active
+{% endblock blogNav %}">
+
+
+{% block message %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+	{{message}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock message %}
+
+
+{% block side %}
+{% endblock side %}
+
+
+{% block content %}
+
+<div class="container-fluid col-sm-10 mt-3 ">
+	<div class="text-center">
+		<h3 class="text-white">
+			Project_B || LXDPP v1.0
+		</h3>
+		<h2>
+			Blog
+		</h2>
+	</div>
+	{%for post in posts%}
+	<div class="jumbotron mt-4 px-3 py-3 jumbotron-color" style="overflow: auto;">
+		<h1 class="display-3 ">{{post.title}}</h1>
+		<p class="lead "><h2>This is sub heading...</h2></p>
+		<hr class="my-2">
+		<p><h4>{{post.desc}}</h4>
+		</p>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="#" role="button">Read More..</a>
+		</p>
+		Author: @{{post.author}}  &emsp;  || &emsp;	{{post.category}} &emsp; || &emsp;	{{post.language}} &emsp;	|| &emsp;	{{post.readtime}} mins.
+	</div>
+	<hr class="mb-5" color="red">
+	{%endfor%}
+
+</div>
+
+<!-- side bar is from here -->
+<div class="container-fluid col-sm-2 mt-3">
+	<h4>Side Block</h4>
+</div>
+<!-- /side bar -->
+
+
+{% endblock content %}

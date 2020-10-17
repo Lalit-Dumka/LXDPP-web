@@ -1,0 +1,186 @@
+{% extends 'blog_base.html' %}
+{% load static %}
+
+{% block title %}
+Add Post
+{% endblock title %}
+
+{% block blogNav %}active
+{% endblock blogNav %}">
+
+
+{% block message %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+	{{message}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock message %}
+
+
+{% block side %}
+{% endblock side %}
+
+
+{% block content %}
+
+<div class="col-sm-9 mt-3 mb-5">
+	<div class="text-center">
+		<h3 class="text-white">
+			Project_B || LXDPP v1.0
+		</h3>
+		<h2>
+			Add a New Post
+		</h2>
+	</div>
+
+	<div>
+		<h4 class="mb-3 mt-5">gtfrrghytuynhjderf</h4>
+		<form action="" method="post" class="needs-validation" novalidate>
+		{% csrf_token %}
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label for="firstName">First name</label>
+					<input type="text" class="form-control" id="firstName" placeholder="" value="">
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="lastName">Last name</label>
+					<input type="text" class="form-control" id="lastName" placeholder="" value="">
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="username">Author Tag</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">@</span>
+					</div>
+					<input type="text" class="form-control" id="username" placeholder="Author Tag" name="author" required>
+					<div class="invalid-feedback" style="width: 100%;">
+						Your author-tag is required to recognize you in the web.
+					</div>
+				</div>
+			</div>
+			<hr class="mt-5" color="secondary">
+			<div class="mb-3">
+				<label for="lastName">Blog Title...</label>
+				<input type="text" class="form-control" id="lastName" placeholder="Title for your Blog.." value="" name="title" required>
+				<div class="invalid-feedback">
+					Blog title is important to recognize your blog.....
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="content">Blog Content</label>
+				<textarea type="text" class="form-control" id="content" placeholder="Blog Body.."  name="content" required></textarea>
+				<div class="invalid-feedback">
+					Blog is not a blog without Content.....
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-5 mb-3">
+					<label for="country">Category..</label>
+					<select class="custom-select d-block w-100" id="category" name='category' required>
+						<option value="">Choose...</option>
+						<option>General Trivia</option>
+					</select>
+					<div class="invalid-feedback">
+						Please select a valid category.
+					</div>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="state">Language..</label>
+					<select class="custom-select d-block w-100" id="language" name="language" required>
+						<option value="">Choose...</option>
+						<option>English</option>
+						<option>French</option>
+						<option>German</option>
+					</select>
+					<div class="invalid-feedback">
+						Please select a valid language.
+					</div>
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="zip">Approx reading time..</label>
+					<input type="number" class="form-control" id="readtime" placeholder="mins" name="readtime" required>
+					<div class="invalid-feedback">
+						please input approx average reading time for your blog.
+					</div>
+				</div>
+			</div>
+			<hr class="mt-5" color="white">
+			<h4 class="mb-3">Blog is primarily focused for which group(s) of audience.. </h4>
+			<div class="custom-control custom-checkbox ">
+				<input type="checkbox" class="custom-control-input" id="fo-infancy" checked>
+				<label class="custom-control-label" for="fo-infancy">Infancy</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="fo-childerns" checked>
+				<label class="custom-control-label" for="fo-childerns">Childerns</label>
+			</div>
+			
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="fo-teens" checked>
+				<label class="custom-control-label" for="fo-teens">Teens</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="fo-young-grownups" checked>
+				<label class="custom-control-label" for="fo-young-grownups">Young Grown-ups</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="fo-mature" checked>
+				<label class="custom-control-label" for="fo-mature">Mature</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="fo-oldage" checked >
+				<label class="custom-control-label" for="fo-oldage">Old-Age</label>
+			</div>
+			<hr class="mt-5" color="white">
+
+			<h4 class="mb-3">Comments preferrence</h4>
+
+			<div class="d-block my-3">
+				<div class="custom-control custom-radio">
+					<input id="credit" name="" type="radio" class="custom-control-input" checked required>
+					<label class="custom-control-label" for="credit">for Logged in Users only</label>
+				</div>
+				<div class="custom-control custom-radio">
+					<input id="debit" name="" type="radio" class="custom-control-input" required>
+					<label class="custom-control-label" for="debit">from all viewers including anonymous ones</label>
+				</div>
+				<div class="custom-control custom-radio">
+					<input id="paypal" name="" type="radio" class="custom-control-input" required>
+					<label class="custom-control-label" for="paypal">no one</label>
+				</div>
+			</div>
+			
+			</div>
+			<hr class="mb-5" color="white">
+			<div class="row">
+			<button class=" col-sm-8 btn btn-primary btn-lg btn-block mr-5" type="submit">Save and Publish...</button>
+			<button class=" col-sm-2 btn btn-warning btn-lg btn-block" type=""> X Cancel</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+
+<!-- side bar is from here -->
+<div class="col-sm-2 mt-3">
+	<h4>Side Block</h4>
+</div>
+<!-- /side bar -->
+{% endblock content %}
+
+{% block extrajs %}
+<script src="{% static 'blog/js/add_post.js' %}"></script>
+{% endblock extrajs %}
