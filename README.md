@@ -21,13 +21,14 @@ pip install django
 ![alt text](https://github.com/Lalit-Dumka/LXDPP-web/blob/master/static/blog/img/directory_list.png?raw=true)
 * Now go into the folder where you have extracted all the file.
 * Open command prompt in the folder's location(you can press shift+right mouse btn to get the option of "open cmd here" in the drop down menu).
-* Type in there ```bash
-python manage.py runserver
+* Type in there 
+```bash
+python manage.py runserver 
 ```
-* If you have followed the steps carefully then you can see a localhost url. Copy that URL and paste it in
-your browser and HURRAY.You have succesfully installed my project.
+* If you have followed the steps carefully then you can see a localhost url .  Copy that URL and paste it in
+your browser and HURRAY!!!! you have succesfully installed my project.
 
-# Contributing
+## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
